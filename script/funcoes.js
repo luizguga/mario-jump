@@ -1,10 +1,22 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
+const pontos = document.querySelector('.pontos');
+
+let ligarScore = false;
+let score = 0;
+pontos.innerHTML = score;
 
 const jump = () => {
     mario.classList.add("jump");
 
-    setTimeout(()=>{mario.classList.remove("jump")}, 500);
+    setTimeout(()=>{
+        mario.classList.remove("jump");
+
+        if(ligarScore){
+            pontos.innerHTML = ++score;
+        }
+    }, 500);
+
 }
 
 document.addEventListener('touchstart', jump);
@@ -27,5 +39,7 @@ const loop = setInterval(()=>{
 
         clearInterval(loop);
         setTimeout(()=>{location.reload(true)},2000);
+    }else {
+        ligarScore = true;
     }
 },10)

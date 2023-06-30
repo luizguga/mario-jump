@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -8,13 +10,13 @@
 html, body {
     height: 100vh;
     width: 100vw;
-    background-color: #149914;
+    overflow: hidden;
 }
 .gameboard {
-    height: 80vh;
-    width: 100%;
+    height: 90vh;
+    width: 1000px;
     margin: auto;
-    border-bottom: 20px solid #149914;
+    border-bottom: 10vh solid #149914;
     position: relative;
     overflow: hidden;
     background-image: linear-gradient(#87ceeb, #e0f6ff);
@@ -41,6 +43,24 @@ html, body {
     position: absolute;
     width: 500px;
     animation: clouds-animation 5s infinite linear;
+}
+
+.pontuacao {
+    position: absolute;
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+    color: white;
+    left: 2vw;
+    top: 2vh;
+}
+
+.pontuacao p {
+    text-shadow: 2px 2px 2px black;
+    text-align: center;
+}
+
+.pontos {
+    margin-top: 10px;
 }
 
 @keyframes pipe-animation {
