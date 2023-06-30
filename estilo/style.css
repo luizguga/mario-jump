@@ -26,7 +26,7 @@ html, body {
     position: absolute;
     bottom: 0;
     width: 80px;
-    animation: pipe-animation 1s infinite linear;
+    animation: pipe-animation .8s infinite linear;
 }
 
 .mario {
