@@ -39,6 +39,7 @@ const loop = setInterval(()=>{
 
         clearInterval(loop);
         setTimeout(()=>{location.reload(true)},2000);
+        ligarScore = false;
     }else {
         ligarScore = true;
     }
