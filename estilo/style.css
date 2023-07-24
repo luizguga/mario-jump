@@ -100,8 +100,15 @@ html, body {
 }
 
 .telagameover {
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #87ceebe6;
 }
 @media screen and (max-width: 1000px) {
     .telagameover {
@@ -109,14 +116,21 @@ html, body {
     }
 }
 
+.container {
+    text-align: center;
+}
+
 .gameover {
     text-shadow: 2px 2px 2px white;
+    margin-bottom: 20px;
 }
 
 .botaoreinicio {
     color: white;
     background-color: transparent;
     text-shadow: 2px 2px 2px black;
+    cursor: pointer;
+    padding: 5px;
 }
 
 .botaoreinicio:hover {
