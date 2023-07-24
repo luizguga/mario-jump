@@ -64,4 +64,4 @@ const loop = setInterval(()=>{
     }else {
         ligarScore = true;
     }
-},10)
+},10);
