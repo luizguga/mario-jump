@@ -29,6 +29,8 @@ const loop = setInterval(()=>{
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
 
     if(pipePosition <= 120 && pipePosition > 0 && marioPosition <= 80){
+        ligarScore = false;
+        
         pipe.style.animation = 'none';
         pipe.style.left = `${pipePosition}px`;
         
@@ -59,8 +61,6 @@ const loop = setInterval(()=>{
         botaoReinicio.addEventListener('click', ()=>{location.reload(true)});
 
         clearInterval(loop);
-
-        ligarScore = false;
     }else {
         ligarScore = true;
     }
