@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
 }
 html, body {
     height: 100vh;
@@ -47,7 +48,6 @@ html, body {
 
 .pontuacao {
     position: absolute;
-    font-family: 'Press Start 2P', cursive;
     text-transform: uppercase;
     color: white;
     left: 2vw;
@@ -97,4 +97,28 @@ html, body {
     to {
         right: 100%;
     }
+}
+
+.telagameover {
+    height: 100%;
+    width: 100%;
+}
+@media screen and (max-width: 1000px) {
+    .telagameover {
+        width: 100vw;
+    }
+}
+
+.gameover {
+    text-shadow: 2px 2px 2px white;
+}
+
+.botaoreinicio {
+    color: white;
+    background-color: transparent;
+    text-shadow: 2px 2px 2px black;
+}
+
+.botaoreinicio:hover {
+    background-color: #74aec5;
 }

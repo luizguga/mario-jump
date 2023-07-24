@@ -1,6 +1,7 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 const pontos = document.querySelector('.pontos');
+const gameBoard = document.querySelector('.gameboard');
 
 let ligarScore = false;
 let score = 0;
@@ -37,8 +38,40 @@ const loop = setInterval(()=>{
         mario.style.width = '75px';
         mario.style.marginLeft = '50px';
 
+        const telaGameOver = document.createElement('div');
+        telaGameOver.setAttribute('class', 'telagameover');
+        telaGameOver.style.position = 'absolute';
+        telaGameOver.style.display = 'flex';
+        telaGameOver.style.top = '0';
+        telaGameOver.style.left = '0';
+        telaGameOver.style.justifyContent = 'center';
+        telaGameOver.style.alignItems = 'center';
+        telaGameOver.style.backgroundColor = 'rgb(135, 206, 235, .9)';
+        gameBoard.appendChild(telaGameOver);
+
+        const container = document.createElement('div');
+        container.setAttribute('class', 'container');
+        container.style.textAlign = 'center';
+        telaGameOver.appendChild(container)
+
+        const paragrafo = document.createElement('p');
+        paragrafo.setAttribute('class', 'gameover');
+        paragrafo.innerText = 'Game Over';
+        paragrafo.style.marginBottom = '20px';
+        container.appendChild(paragrafo);
+
+        const botaoReinicio = document.createElement('button');
+        botaoReinicio.setAttribute('class', 'botaoreinicio');
+        botaoReinicio.innerText = 'Reiniciar';
+        botaoReinicio.style.display = 'inline-block';
+        botaoReinicio.style.cursor = 'pointer';
+        botaoReinicio.style.padding = '5px';
+        container.appendChild(botaoReinicio);
+
+        botaoReinicio.onclick = ()=>{location.reload(true)};
+
         clearInterval(loop);
-        setTimeout(()=>{location.reload(true)},2000);
+
         ligarScore = false;
     }else {
         ligarScore = true;
