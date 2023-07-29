@@ -114,6 +114,9 @@ html, body {
     .telagameover {
         width: 100vw;
     }
+    p.gameover {
+        font-size: 2em;
+    }
 }
 
 
