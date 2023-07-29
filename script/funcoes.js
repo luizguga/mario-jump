@@ -20,10 +20,6 @@ const jump = () => {
 
 }
 
-document.addEventListener('touchstart', jump);
-document.addEventListener('keydown', jump);
-
-
 const loop = setInterval(()=>{
     const pipePosition = pipe.offsetLeft;
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
@@ -40,28 +36,40 @@ const loop = setInterval(()=>{
         mario.style.width = '75px';
         mario.style.marginLeft = '50px';
 
-        const telaGameOver = document.createElement('div');
-        telaGameOver.setAttribute('class', 'telagameover');
-        gameBoard.appendChild(telaGameOver);
-
-        const container = document.createElement('div');
-        container.setAttribute('class', 'container');
-        telaGameOver.appendChild(container)
-
-        const paragrafo = document.createElement('p');
-        paragrafo.setAttribute('class', 'gameover');
-        paragrafo.innerText = 'Game Over';
-        container.appendChild(paragrafo);
-
-        const botaoReinicio = document.createElement('button');
-        botaoReinicio.setAttribute('class', 'botaoreinicio');
-        botaoReinicio.innerText = 'Reiniciar';
-        container.appendChild(botaoReinicio);
-
-        botaoReinicio.addEventListener('click', ()=>{location.reload(true)});
+        telaGameOver();
 
         clearInterval(loop);
     }else {
         ligarScore = true;
     }
 },10);
+
+document.addEventListener('touchstart', jump);
+document.addEventListener('keydown', jump);
+
+const telaGameOver = () => {
+    const telaGameOver = document.createElement('div');
+    telaGameOver.setAttribute('class', 'telagameover');
+    gameBoard.appendChild(telaGameOver);
+
+    const container = document.createElement('div');
+    container.setAttribute('class', 'container');
+    telaGameOver.appendChild(container)
+
+    const paragrafo = document.createElement('p');
+    paragrafo.setAttribute('class', 'gameover');
+    paragrafo.innerText = 'Game Over';
+    container.appendChild(paragrafo);
+
+    const pulos = document.createElement('p');
+    pulos.setAttribute('class', 'pulos');
+    pulos.innerText = `Pulos: ${score}`;
+    container.appendChild(pulos);
+
+    const botaoReinicio = document.createElement('button');
+    botaoReinicio.setAttribute('class', 'botaoreinicio');
+    botaoReinicio.innerText = 'Reiniciar';
+    container.appendChild(botaoReinicio);
+
+    botaoReinicio.addEventListener('click', ()=>{location.reload(true)});
+};
