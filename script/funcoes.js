@@ -47,6 +47,12 @@ const loop = setInterval(()=>{
 document.addEventListener('touchstart', jump);
 document.addEventListener('keydown', jump);
 
+const telaInicio = () => {
+    const telaInicio = document.createElement('div');
+    telaInicio.setAttribute('class', 'telainicio');
+    gameBoard.appendChild(telaInicio);
+};
+
 const telaGameOver = () => {
     const telaGameOver = document.createElement('div');
     telaGameOver.setAttribute('class', 'telagameover');
